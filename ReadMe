@@ -1,4 +1,4 @@
-CO₂ Emissions Prediction Using Linear and Ridge Regression
+CO₂ Emissions Prediction Using Linear and Ridge Regression - dataset 1
 
 This project applies Linear Regression and Ridge Regression to predict CO₂ emissions(g/km) of vehicles using a real-world Canadian vehicle dataset. The objective is to model how vehicle characteristics and categorical attributes influence emissions, and to compare standard linear regression with a regularized approach.
 The project emphasizes:
@@ -48,3 +48,56 @@ Linear Regression: Actual vs Predicted CO₂ Emissions
 Ridge Regression: Actual vs Predicted CO₂ Emissions
 
 Each plot compares predicted values against actual emissions, with a reference diagonal indicating perfect predictions.
+
+
+CO₂ Emissions Analysis using Linear Regression - dataset 2
+Overview
+
+This project analyzes a CO₂ emissions dataset to study the relationship between emissions, time variables (year, month), and categorical factors such as country and sector. The objective is to evaluate how well simple time-based models explain emissions compared to models that include sectoral and regional information.
+
+Dataset Source: CO₂ emissions dataset (CSV extracted from a compressed file)
+
+Key variables:
+date → converted into year and month
+country, sector → one-hot encoded
+value → CO₂ emissions (target variable)
+
+Methodology
+Data Extraction & Cleaning
+Extracted dataset from a compressed file
+Handled encoding issues and skipped malformed rows
+Converted date column into numerical time features
+Feature Engineering
+One-hot encoding for categorical variables (country, sector)
+Separation of features (X) and target (y)
+
+Modeling - 
+Linear Regression (scikit-learn)
+Trained using all engineered features
+Evaluated using R² score and RMSE
+OLS Regression (statsmodels)
+Used only year and month to analyze time-based explanatory power
+
+Results - 
+The multivariate Linear Regression model performs significantly better than the time-only OLS model.
+The OLS regression shows an R² value close to 0, indicating that year and month alone do not explain CO₂ emissions.
+This highlights the importance of sectoral and regional features in emissions modeling.
+
+Tools & Libraries - Python, pandas, numpy, scikit-learn, statsmodels
+Conclusion - Time variables by themselves are insufficient for modeling CO₂ emissions. Including categorical and domain-specific features (such as country and sector) is essential for meaningful predictive performance.
+
+
+Energy Efficiency Dataset – Correlation Analysis - Dataset 3
+Overview
+This project performs an initial exploratory analysis on the Energy Efficiency dataset to understand relationships between building design parameters and energy efficiency outcomes.
+Dataset  - Source: Energy Efficiency Dataset (ENB2012), Format: CSV
+Contains numerical features related to building geometry and energy loads
+Analysis Performed
+Loaded and inspected the dataset using pandas
+Computed the correlation matrix to analyze linear relationships between variables
+Correlation results can be used to:
+Identify strongly related features
+Support feature selection for future machine learning models
+
+Tools Used - Python, pandas, numpy, matplotlib
+Purpose - This analysis serves as a preprocessing and feature-understanding step before applying regression or other machine learning models.
