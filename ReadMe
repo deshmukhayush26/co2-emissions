@@ -1,0 +1,50 @@
+CO₂ Emissions Prediction Using Linear and Ridge Regression
+
+This project applies Linear Regression and Ridge Regression to predict CO₂ emissions(g/km) of vehicles using a real-world Canadian vehicle dataset. The objective is to model how vehicle characteristics and categorical attributes influence emissions, and to compare standard linear regression with a regularized approach.
+The project emphasizes:
+- Proper preprocessing of categorical data
+- Model comparison using evaluation metrics
+- Visual interpretation of predictions
+
+Source: CO₂ Emissions by Vehicles – Canada (Kaggle)
+Target Variable:CO2 Emissions(g/km)
+
+Key Features Used:
+- Engine size, cylinders, fuel consumption
+- Vehicle make
+- Vehicle class
+- Fuel type
+Categorical features are encoded using one-hot encoding.
+Loaded dataset using pandas
+One-hot encoded categorical variables:
+- Make
+- Vehicle Class
+- Fuel Type
+Removed leakage-prone and redundant columns such as:
+- Fuel consumption metrics
+- Model name
+- Transmission
+
+Split data into:70% training, 30% testing
+
+Models Implemented
+Linear Regression - A baseline regression model trained using ordinary least squares to predict CO₂ emissions.
+Ridge Regression - A regularized linear model using L2 penalty to reduce coefficient magnitude and improve stability in the presence of multicollinearity.
+
+Models were evaluated on the test set using:
+R² score (goodness of fit)
+Root Mean Squared Error (RMSE)
+
+Results
+Linear Regression	
+R² ~ 0.96	
+RMSE ~ 12
+Ridge Regression	
+R² ~ 0.96
+RMSE ~ 12
+
+Both models perform similarly, with Ridge Regression offering improved coefficient regularization. Two plots were generated to assess model performance:
+Linear Regression: Actual vs Predicted CO₂ Emissions
+Ridge Regression: Actual vs Predicted CO₂ Emissions
+
+Each plot compares predicted values against actual emissions, with a reference diagonal indicating perfect predictions.
